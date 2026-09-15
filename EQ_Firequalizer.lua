@@ -1,3 +1,25 @@
+-- ==============================================================================
+-- Firequalizer Presets for MPV (based on VLC)
+-- Copyright (C) 2026 [Nama atau Username GitHub Anda]
+--
+-- This program is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program. If not, see <https://www.gnu.org/licenses/>.
+--
+-- Disclaimer: 
+-- Extreme manipulation of firequalizer parameters can cause clipping or 
+-- unexpected frequency outputs. Use at your own risk. The author is not 
+-- liable for any hardware damage or hearing impairment.
+-- ==============================================================================
 
 local mp = require "mp"
 -- 20kHz random band frequency
@@ -179,13 +201,11 @@ mp.add_key_binding("a-m", "SoftRock_Harman_4096-band", function() apply("SoftRoc
 
 
 mp.register_event("file-loaded", function()
-    -- Reset state, soxr akan rebuild chain via "af set"
-    -- yang menghapus semua filter termasuk @eq kita
     enabled = false
 end)
 
 mp.register_script_message("soxr-ready", function()
-    -- Re-apply EQ setelah soxr selesai rebuild chain
+    -- Re-apply EQ soxr after rebuild chain
     if current then
         mp.commandv("af", "add", "@eq:" .. EQ[current])
         enabled = true
@@ -206,6 +226,5 @@ end)
 
 -- if you really have to use firequalizer my suggestion please combine with SoX Resample using Aresample=soxr 
 -- to reduce some effect of acoustic distortion due to imbalance frequency or too much adjusting gain
--- TLDR; SoX_Resample_auto.lua {Aresample=soxr + Lowpass 20000Hz(limiting safe hearing frequency) [+ Optional fun effect Stereowiden] + Dynaudnorm for dynamic normalization} + EQ_firequalizer.lua
 -- Technically possible combine with another filter but i'm prefer not to using any EQ at fisrt place
 
