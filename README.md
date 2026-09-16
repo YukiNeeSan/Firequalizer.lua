@@ -6,7 +6,7 @@ Customizable Lua equalizer controller for **mpv** using FFmpeg `firequalizer`.
 
 * 20-band EQ
 * 60-band EQ
-* 4086-band interpolated EQ
+* 4096-band interpolated EQ
 * Freely customizable band toggles
 * Custom EQ presets
 
