@@ -20,3 +20,5 @@ https://ffmpeg.org/ffmpeg-filters.html#firequalizer
 **VLC:**
 https://github.com/videolan/vlc
 
+###
+another firequalizer [preset](https://github.com/mpv-player/mpv/issues/8418#issuecomment-3316283778)
