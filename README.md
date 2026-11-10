@@ -20,5 +20,8 @@ https://ffmpeg.org/ffmpeg-filters.html#firequalizer
 **VLC:**
 https://github.com/videolan/vlc
 
+### Notes
+The script flexible, normally use ffprobe to skip HE-AAC (v1 and v2), because these low-bitrate codecs sound artifact-prone when resampled and are best left to the default AAC decoder.
+
 ###
 another firequalizer [preset](https://github.com/mpv-player/mpv/issues/8418#issuecomment-3316283778)
