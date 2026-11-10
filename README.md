@@ -21,7 +21,7 @@ https://ffmpeg.org/ffmpeg-filters.html#firequalizer
 https://github.com/videolan/vlc
 
 ### Notes
-The script flexible, normally use ffprobe to skip HE-AAC (v1 and v2), because these low-bitrate codecs sound artifact-prone when resampled and are best left to the default AAC decoder.
+The script flexible, normally use ffprobe to skip HE-AAC (v1 and v2), because these low-bitrate codecs sound artifact-prone when resampled and are best left to the default AAC decoder. Another lossy codec like Opus, Vorbis, AAC-LC, old MP3 an another codec without fake sounds like SBR in HE_AAC generally safe
 
 ###
 another firequalizer [preset](https://github.com/mpv-player/mpv/issues/8418#issuecomment-3316283778)
